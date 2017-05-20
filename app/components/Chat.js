@@ -142,13 +142,15 @@ export default class Chat extends Component {
           style={{position: 'absolute', top: 0, left: 0}}label='Go Back'
         />
 
-        <ListView
-          dataSource={this.dataSource.cloneWithRows(testData)}
-          renderRow={this.renderRow}
-          renderScrollComponent={props => <InvertibleScrollView {...props} testID={'list'} inverted={true}/>}
-          keyboardDismissMode={TrackInteractive ? 'interactive' : 'none'}
-          contentOffset={{y: -initialInputBarHeight}}
-        />
+        <View style={{flex: 1}}>
+          <ListView
+            dataSource={this.dataSource.cloneWithRows(testData)}
+            renderRow={this.renderRow}
+            renderScrollComponent={props => <InvertibleScrollView {...props} testID={'list'} inverted={true}/>}
+            keyboardDismissMode={TrackInteractive ? 'interactive' : 'none'}
+            contentOffset={{y: -initialInputBarHeight}}
+          />
+        </View>
 
         <KeyboardAccessoryView
           renderContent={this.keyboardAccessoryViewContent}
