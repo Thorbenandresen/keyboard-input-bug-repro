@@ -2,9 +2,11 @@ import React from 'react'
 import {
   View,
   Text,
-  StyleSheet
+  StyleSheet,
+  ScrollView
 } from 'react-native'
 import Button from './Button'
+
 
 
 const route = {
@@ -21,6 +23,11 @@ const Home = ({_handleNavigate}) => (
   <View style={styles.container}>
     <Text style={styles.title}>Home</Text>
     <Button onPress={() => _handleNavigate(route)} label='Go To Chat' />
+        <ScrollView style={{paddingTop: 200}}>
+            <Text style={styles.text}>Scroll me</Text>
+            <Text style={styles.text}>Scroll me</Text>
+            <Text style={styles.text}>Scroll me</Text>
+          </ScrollView>
   </View>
 )
 
@@ -32,6 +39,10 @@ const styles = StyleSheet.create({
   },
   container: {
     paddingTop: 60
+  },
+    text: {
+    color: 'white',
+    fontSize: 20,
   }
 })
 
